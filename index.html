@@ -1,0 +1,1687 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Құдалық · Сұлтан & Аяулым</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Marcellus&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-cream: #faf6f0;
+    --bg-rose: #f5e8e0;
+    --bg-card: #ffffff;
+    --gold: #b8923a;
+    --gold-soft: #d4af37;
+    --gold-light: #e8d4a8;
+    --gold-deep: #8b6f1f;
+    --rose: #c89b8a;
+    --rose-soft: #e8c8b8;
+    --ink: #3a2e2a;
+    --ink-soft: #6b5a52;
+    --whatsapp: #25D366;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg-cream);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+.video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -3;
+    opacity: 1;
+}
+.video-overlay {
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(ellipse at center, transparent 30%, rgba(250, 246, 240, 0.15) 70%, rgba(250, 246, 240, 0.25) 100%);
+    z-index: -2;
+}
+.stars {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    overflow: hidden;
+}
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 12px var(--gold-soft);
+    animation: twinkle 4s infinite ease-in-out;
+    opacity: 0.6;
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 0.9; transform: scale(1.3); }
+}
+.particle {
+    position: fixed;
+    width: 4px;
+    height: 4px;
+    background: var(--gold-soft);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: -1;
+    box-shadow: 0 0 12px var(--gold-soft), 0 0 20px rgba(255, 255, 255, 0.6);
+    animation: float-up linear infinite;
+    opacity: 0.7;
+}
+@keyframes float-up {
+    from { transform: translateY(100vh) translateX(0); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    to { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+}
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+}
+.hero {
+    text-align: center;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out 0.3s forwards;
+    position: relative;
+    z-index: 1;
+}
+.hero::before {
+    content: '';
+    position: absolute;
+    inset: -40px -60px;
+    background: radial-gradient(ellipse at center, rgba(250, 246, 240, 0.5), transparent 70%);
+    z-index: -1;
+    filter: blur(20px);
+}
+.eyebrow {
+    font-family: 'Marcellus', serif;
+    font-size: 11px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+.eyebrow::before, .eyebrow::after {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-deep), transparent);
+}
+.bismillah {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--gold-deep);
+    margin-bottom: 16px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+h1.title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: clamp(48px, 9vw, 96px);
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    text-shadow: 0 2px 12px rgba(255, 255, 255, 0.7), 0 4px 20px rgba(255, 255, 255, 0.5);
+}
+h1.title em {
+    font-style: italic;
+    color: var(--gold-deep);
+    font-weight: 500;
+}
+.card {
+    width: 100%;
+    max-width: 560px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(250, 246, 240, 0.95));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(184, 146, 58, 0.35);
+    border-radius: 4px;
+    padding: 50px 40px;
+    position: relative;
+    box-shadow:
+        0 30px 80px rgba(58, 46, 42, 0.25),
+        0 10px 30px rgba(184, 146, 58, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out 0.6s forwards;
+}
+.corner {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--gold);
+    opacity: 0.7;
+}
+.corner.tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.corner.tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.corner.bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.corner.br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+.ornament {
+    text-align: center;
+    margin: 0 auto 30px;
+    color: var(--gold);
+    opacity: 0.8;
+}
+.ornament svg { width: 80px; height: auto; }
+.greeting {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-style: italic;
+    text-align: center;
+    color: var(--ink-soft);
+    margin-bottom: 35px;
+    line-height: 1.7;
+}
+.couple { text-align: center; margin: 30px 0; }
+.couple-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 7vw, 56px);
+    font-weight: 400;
+    line-height: 1.1;
+}
+.couple-names .name {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold-soft), var(--gold), var(--gold-soft), var(--gold-deep));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+    font-style: italic;
+}
+.couple-names .amp {
+    display: block;
+    font-family: 'Marcellus', serif;
+    font-size: 0.5em;
+    color: var(--rose);
+    margin: 8px 0;
+    transform: scale(1.5, 1);
+}
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 35px 0;
+    gap: 16px;
+}
+.divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    max-width: 100px;
+}
+.divider-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    transform: rotate(45deg);
+    box-shadow: 0 0 10px rgba(184, 146, 58, 0.5);
+}
+.invitation-text {
+    text-align: center;
+    margin: 45px 0;
+    position: relative;
+    padding: 35px 20px 30px;
+}
+
+.invitation-text::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.invitation-text::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+.invitation-line {
+    font-family: 'Cormorant Garamond', serif;
+    line-height: 1.6;
+    color: var(--ink);
+    margin-bottom: 8px;
+    opacity: 0;
+    animation: lineAppear 0.8s ease-out forwards;
+}
+
+.invitation-line:nth-child(1) { animation-delay: 0.1s; }
+.invitation-line:nth-child(2) { animation-delay: 0.25s; }
+.invitation-line:nth-child(3) { animation-delay: 0.4s; }
+.invitation-line:nth-child(4) { animation-delay: 0.55s; }
+.invitation-line:nth-child(5) { animation-delay: 0.7s; }
+.invitation-line:nth-child(6) { animation-delay: 0.85s; }
+.invitation-line:nth-child(7) { animation-delay: 1.0s; }
+
+@keyframes lineAppear {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* "— Сіздерді —" - басталу */
+.invitation-line.intro {
+    font-family: 'Marcellus', serif;
+    font-size: 13px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 20px;
+    font-style: normal;
+}
+
+/* "Қазағымыздың дәстүріне сай" */
+.invitation-line.tradition {
+    font-size: 21px;
+    color: var(--ink-soft);
+    font-style: italic;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+/* "шаңырағымызда өтетін балаларымыз" */
+.invitation-line.ceremony1 {
+    font-size: 19px;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+/* "Сұлтан мен Аяулымның" - басты есімдер */
+.invitation-line.names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 500;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold-soft), var(--gold), var(--gold-soft), var(--gold-deep));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: lineAppear 0.8s ease-out 0.55s forwards, shimmer 5s linear infinite 1s;
+    margin: 16px 0 18px;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* "құдалық рәсіміне арналған" */
+.invitation-line.ceremony2 {
+    font-size: 19px;
+    color: var(--ink);
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+/* "ақ дастарханымыздың" - акцент */
+.invitation-line.dastarkhan {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    color: var(--gold-deep);
+    font-size: 24px;
+    font-weight: 500;
+    margin: 6px 0;
+    letter-spacing: 0.3px;
+}
+
+/* "қадірлі қонағы болуға шақырамыз!" - қорытынды */
+.invitation-line.honor {
+    color: var(--ink);
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+@media (max-width: 480px) {
+    .invitation-line.tradition { font-size: 18px; }
+    .invitation-line.ceremony1, .invitation-line.ceremony2 { font-size: 17px; }
+    .invitation-line.names { font-size: 28px; }
+    .invitation-line.dastarkhan { font-size: 20px; }
+    .invitation-line.honor { font-size: 17px; }
+}
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 35px 0;
+}
+.detail-cell {
+    background: linear-gradient(145deg, rgba(232, 212, 168, 0.2), rgba(245, 232, 224, 0.3));
+    border: 1px solid rgba(184, 146, 58, 0.25);
+    border-radius: 2px;
+    padding: 22px 18px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.detail-cell.full { grid-column: 1 / -1; }
+.detail-cell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(184, 146, 58, 0.15), transparent);
+    transition: left 0.7s ease;
+}
+.detail-cell:hover::before { left: 100%; }
+.detail-cell:hover {
+    border-color: var(--gold);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(184, 146, 58, 0.2);
+    background: linear-gradient(145deg, rgba(232, 212, 168, 0.35), rgba(245, 232, 224, 0.45));
+}
+.cell-icon {
+    width: 44px;
+    height: 44px;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    border: 1px solid rgba(184, 146, 58, 0.4);
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    background: rgba(255, 255, 255, 0.5);
+}
+.detail-cell:hover .cell-icon {
+    transform: rotate(360deg);
+    background: var(--gold);
+    color: white;
+    border-color: var(--gold);
+}
+.cell-icon svg { width: 20px; height: 20px; }
+.cell-label {
+    font-family: 'Marcellus', serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+.cell-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: var(--ink);
+    font-weight: 500;
+    line-height: 1.3;
+}
+.cell-value.large { font-size: 24px; color: var(--gold-deep); }
+.cell-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    font-style: italic;
+}
+.hosts {
+    text-align: center;
+    margin-top: 30px;
+    padding: 25px 0;
+    border-top: 1px solid rgba(184, 146, 58, 0.2);
+    border-bottom: 1px solid rgba(184, 146, 58, 0.2);
+}
+.hosts-label {
+    font-family: 'Marcellus', serif;
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+}
+.hosts-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 22px;
+    color: var(--ink);
+}
+.countdown-section { margin-top: 35px; }
+.countdown-title {
+    font-family: 'Marcellus', serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    text-align: center;
+    margin-bottom: 18px;
+    opacity: 0.85;
+}
+.countdown {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+.countdown-item {
+    background: linear-gradient(145deg, rgba(232, 212, 168, 0.25), rgba(245, 232, 224, 0.3));
+    border: 1px solid rgba(184, 146, 58, 0.25);
+    padding: 16px 8px;
+    text-align: center;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+.countdown-item:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+    background: linear-gradient(145deg, rgba(232, 212, 168, 0.4), rgba(245, 232, 224, 0.45));
+}
+.countdown-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: var(--gold-deep);
+    font-weight: 500;
+    line-height: 1;
+}
+.countdown-label {
+    font-family: 'Marcellus', serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-top: 6px;
+}
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 35px;
+}
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 28px;
+    font-family: 'Marcellus', serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    border: none;
+}
+.btn-primary { background: var(--whatsapp); color: white; }
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    background: #1ebe5d;
+}
+.btn-call {
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-soft));
+    color: white;
+    border: 1px solid var(--gold);
+    font-weight: 600;
+}
+.btn-call:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(184, 146, 58, 0.5);
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+}
+.btn-secondary {
+    background: transparent;
+    color: var(--gold-deep);
+    border: 1px solid var(--gold);
+}
+.btn-secondary:hover {
+    background: var(--gold);
+    color: white;
+}
+.btn svg { width: 16px; height: 16px; }
+.wishes-section {
+    width: 100%;
+    max-width: 560px;
+    margin-top: 40px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out 0.9s forwards;
+}
+.wishes-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(250, 246, 240, 0.95));
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    border: 1px solid rgba(184, 146, 58, 0.35);
+    border-radius: 4px;
+    padding: 45px 35px;
+    position: relative;
+    box-shadow:
+        0 30px 80px rgba(58, 46, 42, 0.25),
+        0 10px 30px rgba(184, 146, 58, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+.wishes-card .corner { width: 40px; height: 40px; }
+.wishes-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.wishes-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 16px;
+    color: var(--rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: heartbeat 2s ease-in-out infinite;
+}
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+.wishes-icon svg { width: 100%; height: 100%; }
+.wishes-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+.wishes-title em {
+    color: var(--gold);
+    font-style: italic;
+}
+.wishes-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+}
+.wishes-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.form-input, .form-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(184, 146, 58, 0.3);
+    color: var(--ink);
+    padding: 14px 16px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    border-radius: 2px;
+    transition: all 0.3s;
+    outline: none;
+}
+.form-input::placeholder, .form-textarea::placeholder {
+    color: rgba(58, 46, 42, 0.4);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+}
+.form-input:focus, .form-textarea:focus {
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 0 0 3px rgba(184, 146, 58, 0.15);
+}
+.form-textarea {
+    min-height: 110px;
+    resize: vertical;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+}
+.btn-send {
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-soft));
+    color: white;
+    border: 1px solid var(--gold);
+    font-weight: 600;
+    padding: 16px;
+    margin-top: 6px;
+}
+.btn-send:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(184, 146, 58, 0.4);
+    background: linear-gradient(135deg, var(--gold), var(--gold-soft));
+}
+.wishes-list {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-height: 420px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.wishes-list::-webkit-scrollbar { width: 4px; }
+.wishes-list::-webkit-scrollbar-track { background: rgba(184, 146, 58, 0.05); }
+.wishes-list::-webkit-scrollbar-thumb {
+    background: rgba(184, 146, 58, 0.3);
+    border-radius: 2px;
+}
+.wish-item {
+    background: linear-gradient(145deg, rgba(232, 212, 168, 0.2), rgba(245, 232, 224, 0.25));
+    border: 1px solid rgba(184, 146, 58, 0.2);
+    border-left: 2px solid var(--gold);
+    padding: 16px 18px;
+    border-radius: 2px;
+    animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+.wish-author {
+    font-family: 'Marcellus', serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 6px;
+}
+.wish-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    font-style: italic;
+}
+.wish-date {
+    font-family: 'Manrope', sans-serif;
+    font-size: 10px;
+    color: var(--ink-soft);
+    margin-top: 8px;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
+.no-wishes {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--ink-soft);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    opacity: 0.6;
+}
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-soft));
+    color: white;
+    padding: 14px 28px;
+    border-radius: 50px;
+    font-family: 'Marcellus', serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 30px rgba(184, 146, 58, 0.4);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+}
+.toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}
+
+/* ЖҮРЕК АНИМАЦИЯСЫ - АШЫҚ ВЕРСИЯ */
+.heart-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    background: radial-gradient(circle at center, rgba(255, 248, 235, 0.85), rgba(245, 232, 224, 0.92));
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    overflow: hidden;
+}
+.heart-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+.light-rays {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.8s ease 0.3s;
+}
+.heart-overlay.show .light-rays { opacity: 1; }
+.light-ray {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 100vh;
+    background: linear-gradient(to bottom, transparent, rgba(184, 146, 58, 0.5), transparent);
+    transform-origin: top center;
+    animation: ray-rotate 8s linear infinite;
+}
+@keyframes ray-rotate {
+    from { transform: translate(-50%, 0) rotate(0deg); }
+    to { transform: translate(-50%, 0) rotate(360deg); }
+}
+.ripple {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+}
+.heart-overlay.show .ripple {
+    animation: ripple-out 2.5s ease-out infinite;
+}
+.heart-overlay.show .ripple:nth-child(2) { animation-delay: 0.6s; }
+.heart-overlay.show .ripple:nth-child(3) { animation-delay: 1.2s; }
+@keyframes ripple-out {
+    0% { width: 100px; height: 100px; opacity: 0.8; border-width: 2px; }
+    100% { width: 700px; height: 700px; opacity: 0; border-width: 0.5px; }
+}
+.center-burst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(184, 146, 58, 0.4) 0%, rgba(232, 200, 184, 0.2) 30%, transparent 70%);
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+    pointer-events: none;
+}
+.heart-overlay.show .center-burst {
+    animation: burst-glow 2s ease-out forwards;
+}
+@keyframes burst-glow {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1.5); opacity: 0; }
+}
+.heart-container {
+    position: relative;
+    transform: scale(0) rotate(-15deg);
+    transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 10;
+}
+.heart-overlay.show .heart-container {
+    transform: scale(1) rotate(0deg);
+}
+.heart-shape {
+    width: 240px;
+    height: 220px;
+    position: relative;
+    filter: drop-shadow(0 0 60px rgba(184, 146, 58, 0.6)) drop-shadow(0 10px 20px rgba(200, 155, 138, 0.3));
+    animation: heart-beat 1.2s ease-in-out infinite;
+}
+@keyframes heart-beat {
+    0%, 100% { transform: scale(1); }
+    15% { transform: scale(1.12); filter: drop-shadow(0 0 80px rgba(184, 146, 58, 0.8)) drop-shadow(0 10px 25px rgba(200, 155, 138, 0.4)); }
+    30% { transform: scale(0.98); }
+    45% { transform: scale(1.08); filter: drop-shadow(0 0 70px rgba(184, 146, 58, 0.7)); }
+    60% { transform: scale(1); }
+}
+.heart-shape svg { width: 100%; height: 100%; }
+.heart-shape::after {
+    content: '';
+    position: absolute;
+    top: 15%;
+    left: 25%;
+    width: 25%;
+    height: 25%;
+    background: radial-gradient(ellipse, rgba(255, 255, 255, 0.8), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: shine-glow 2s ease-in-out infinite;
+}
+@keyframes shine-glow {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+.heart-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    z-index: 2;
+}
+.heart-text-line1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+    opacity: 0;
+    text-shadow: 0 2px 12px rgba(139, 111, 31, 0.9), 0 0 20px rgba(184, 146, 58, 0.7);
+    text-transform: lowercase;
+}
+.heart-overlay.show .heart-text-line1 {
+    animation: text-fade-in 0.8s ease-out 0.6s forwards;
+}
+.heart-text-line2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    color: #fff;
+    font-weight: 600;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-shadow:
+        0 2px 16px rgba(139, 111, 31, 1),
+        0 0 30px rgba(184, 146, 58, 0.8),
+        0 4px 20px rgba(58, 46, 42, 0.6);
+    opacity: 0;
+}
+.heart-overlay.show .heart-text-line2 {
+    animation: text-pop-in 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.8s forwards;
+}
+@keyframes text-fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes text-pop-in {
+    0% { opacity: 0; transform: scale(0.5); }
+    100% { opacity: 1; transform: scale(1); }
+}
+.flying-heart {
+    position: absolute;
+    pointer-events: none;
+    animation: fly-up 3s ease-out forwards;
+}
+@keyframes fly-up {
+    0% { opacity: 0; transform: translateY(0) scale(0.3) rotate(0deg); }
+    15% { opacity: 1; transform: translateY(-30px) scale(1) rotate(var(--mid-rot, 10deg)); }
+    100% { opacity: 0; transform: translateY(-400px) translateX(var(--tx, 0)) scale(0.8) rotate(var(--rot, 30deg)); }
+}
+.spark {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: radial-gradient(circle, #fff, var(--gold-soft), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow: 0 0 10px var(--gold), 0 0 20px var(--gold-soft);
+    animation: spark-burst 1.8s ease-out forwards;
+}
+@keyframes spark-burst {
+    0% { opacity: 0; transform: translate(0, 0) scale(0); }
+    20% { opacity: 1; transform: translate(0, 0) scale(1); }
+    100% { opacity: 0; transform: translate(var(--end-x, 100px), var(--end-y, -100px)) scale(0.3); }
+}
+.petal {
+    position: absolute;
+    top: -20px;
+    width: 8px;
+    height: 12px;
+    background: linear-gradient(135deg, var(--rose-soft), var(--rose));
+    border-radius: 50% 0 50% 50%;
+    pointer-events: none;
+    opacity: 0;
+    animation: petal-fall linear forwards;
+}
+@keyframes petal-fall {
+    0% { opacity: 0; transform: translateY(0) rotate(0deg); }
+    10% { opacity: 0.8; }
+    90% { opacity: 0.6; }
+    100% { opacity: 0; transform: translateY(110vh) translateX(var(--drift, 100px)) rotate(720deg); }
+}
+
+.signature {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeUp 1.2s ease-out 1.2s forwards;
+    position: relative;
+    z-index: 1;
+}
+.signature::before {
+    content: '';
+    position: absolute;
+    inset: -20px -40px;
+    background: radial-gradient(ellipse at center, rgba(250, 246, 240, 0.5), transparent 70%);
+    z-index: -1;
+    filter: blur(15px);
+}
+.signature-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: 1px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* МУЗЫКА БАТЫРМАСЫ */
+.music-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(250, 246, 240, 0.98));
+    border: 1px solid var(--gold);
+    color: var(--gold-deep);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 8px 25px rgba(184, 146, 58, 0.25), 0 0 20px rgba(184, 146, 58, 0.1);
+    opacity: 0;
+    animation: fadeUp 1s ease-out 1.5s forwards;
+}
+.music-toggle:hover {
+    transform: scale(1.08);
+    background: linear-gradient(135deg, var(--gold-deep), var(--gold-soft));
+    color: white;
+    box-shadow: 0 10px 30px rgba(184, 146, 58, 0.5);
+}
+.music-toggle svg {
+    width: 22px;
+    height: 22px;
+    transition: all 0.3s;
+}
+.music-toggle.playing {
+    border-color: var(--gold-soft);
+    box-shadow: 0 8px 25px rgba(184, 146, 58, 0.4), 0 0 30px rgba(184, 146, 58, 0.3);
+}
+.music-toggle.playing::before {
+    content: '';
+    position: absolute;
+    inset: -3px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    opacity: 0.6;
+    animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(1.4); opacity: 0; }
+}
+.music-waves {
+    display: none;
+    align-items: center;
+    gap: 2px;
+    height: 18px;
+}
+.music-toggle.playing .music-icon { display: none; }
+.music-toggle.playing .music-waves { display: flex; }
+.music-waves span {
+    display: block;
+    width: 2.5px;
+    background: currentColor;
+    border-radius: 2px;
+    animation: wave 1s ease-in-out infinite;
+}
+.music-waves span:nth-child(1) { height: 8px; animation-delay: 0s; }
+.music-waves span:nth-child(2) { height: 14px; animation-delay: 0.15s; }
+.music-waves span:nth-child(3) { height: 18px; animation-delay: 0.3s; }
+.music-waves span:nth-child(4) { height: 12px; animation-delay: 0.45s; }
+.music-waves span:nth-child(5) { height: 8px; animation-delay: 0.2s; }
+@keyframes wave {
+    0%, 100% { transform: scaleY(0.4); }
+    50% { transform: scaleY(1); }
+}
+.music-hint {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(250, 246, 240, 1));
+    border: 1px solid rgba(184, 146, 58, 0.4);
+    color: var(--ink);
+    padding: 10px 16px;
+    border-radius: 4px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    box-shadow: 0 8px 25px rgba(184, 146, 58, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    white-space: nowrap;
+}
+.music-hint::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: 18px;
+    width: 10px;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid rgba(184, 146, 58, 0.4);
+    border-left: 1px solid rgba(184, 146, 58, 0.4);
+    transform: rotate(45deg);
+}
+.music-hint.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 480px) {
+    .card, .wishes-card { padding: 40px 24px; }
+    .corner { width: 35px; height: 35px; }
+    .countdown { gap: 6px; }
+    .countdown-number { font-size: 24px; }
+    .countdown-item { padding: 12px 4px; }
+    .details-grid { gap: 10px; }
+    .detail-cell { padding: 18px 12px; }
+    .cell-value { font-size: 16px; }
+    .cell-value.large { font-size: 20px; }
+    .wishes-title { font-size: 24px; }
+    .heart-shape { width: 200px; height: 180px; }
+    .heart-text-line2 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<button class="music-toggle" id="musicToggle" type="button" aria-label="Музыканы қосу/өшіру">
+    <svg class="music-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M9 18V5l12-2v13"/>
+        <circle cx="6" cy="18" r="3"/>
+        <circle cx="18" cy="16" r="3"/>
+    </svg>
+    <div class="music-waves">
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+</button>
+<div class="music-hint" id="musicHint">♪ Музыканы қосу үшін басыңыз</div>
+
+<audio id="bgMusic" loop preload="auto"><source src="sadr.mp3" type="audio/mpeg"></audio>
+
+<video class="video-bg" autoplay muted loop playsinline>
+    <source src="wedding-video.mp4" type="video/mp4">
+</video>
+<div class="video-overlay"></div>
+<div class="stars" id="stars"></div>
+
+<div class="wrapper">
+
+    <div class="hero">
+        <div class="bismillah">Бісмілләһир-рахманир-рахим</div>
+        <div class="eyebrow">Шақыру · 2026</div>
+        <h1 class="title">Құда<br><em>мың жылдық</em></h1>
+    </div>
+
+    <div class="card">
+        <div class="corner tl"></div>
+        <div class="corner tr"></div>
+        <div class="corner bl"></div>
+        <div class="corner br"></div>
+
+        <div class="ornament">
+            <svg viewBox="0 0 200 30" fill="none">
+                <path d="M0 15 L60 15" stroke="currentColor" stroke-width="0.5"/>
+                <path d="M140 15 L200 15" stroke="currentColor" stroke-width="0.5"/>
+                <circle cx="100" cy="15" r="3" fill="currentColor"/>
+                <path d="M85 15 Q92 5, 100 15 T115 15" stroke="currentColor" stroke-width="1" fill="none"/>
+                <path d="M85 15 Q92 25, 100 15 T115 15" stroke="currentColor" stroke-width="1" fill="none"/>
+                <circle cx="75" cy="15" r="1.5" fill="currentColor"/>
+                <circle cx="125" cy="15" r="1.5" fill="currentColor"/>
+            </svg>
+        </div>
+
+        <p class="greeting">Құрметті<br>ағайын-туыс, бауырлар,<br>құда-жекжат, нағашы-жиен,<br>бөлелер, дос-жарандар!</p>
+
+        <div class="couple">
+            <div class="couple-names">
+                <span class="name">Сұлтан</span>
+                <span class="amp">&</span>
+                <span class="name">Аяулым</span>
+            </div>
+        </div>
+
+        <div class="divider">
+            <div class="divider-line"></div>
+            <div class="divider-dot"></div>
+            <div class="divider-line"></div>
+        </div>
+
+        <div class="invitation-text">
+            <div class="invitation-line intro">Сіздерді</div>
+            <div class="invitation-line tradition">Қазағымыздың дәстүріне сай</div>
+            <div class="invitation-line ceremony1">шаңырағымызда өтетін балаларымыз</div>
+            <div class="invitation-line names">Сұлтан мен Аяулымның</div>
+            <div class="invitation-line ceremony2">құдалық рәсіміне арналған</div>
+            <div class="invitation-line dastarkhan">ақ дастарханымыздың</div>
+            <div class="invitation-line honor">қадірлі қонағы болуға шақырамыз!</div>
+        </div>
+
+        <div class="details-grid">
+            <div class="detail-cell">
+                <div class="cell-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <rect x="3" y="4" width="18" height="18" rx="2"/>
+                        <line x1="16" y1="2" x2="16" y2="6"/>
+                        <line x1="8" y1="2" x2="8" y2="6"/>
+                        <line x1="3" y1="10" x2="21" y2="10"/>
+                    </svg>
+                </div>
+                <div class="cell-label">Күні</div>
+                <div class="cell-value large">23 мамыр</div>
+                <div class="cell-sub">2026 жыл</div>
+            </div>
+
+            <div class="detail-cell">
+                <div class="cell-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <circle cx="12" cy="12" r="10"/>
+                        <polyline points="12 6 12 12 16 14"/>
+                    </svg>
+                </div>
+                <div class="cell-label">Уақыты</div>
+                <div class="cell-value large">12:00</div>
+                <div class="cell-sub">Түскі ас</div>
+            </div>
+
+            <div class="detail-cell full">
+                <div class="cell-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                </div>
+                <div class="cell-label">Мекен-жайы · Қара шаңырақ</div>
+                <div class="cell-value">Түркістан облысы, Сарыағаш қаласы<br>Байбосын ата көшесі, 47</div>
+            </div>
+        </div>
+
+        <div class="hosts">
+            <div class="hosts-label">Той иелері</div>
+            <div class="hosts-names">Манас пен Ұлбосын</div>
+        </div>
+
+        <div class="countdown-section">
+            <div class="countdown-title">Тойға дейін қалды</div>
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Күн</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Сағат</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Минут</div>
+                </div>
+                <div class="countdown-item">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Секунд</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <a href="https://wa.me/77067063333" class="btn btn-primary" target="_blank">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+            <a href="tel:+77067063333" class="btn btn-call">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>Қоңырау · +7 706 706 33 33</span>
+            </a>
+            <a href="https://2gis.kz/search/Сарыағаш%20Байбосын%20ата%2047" class="btn btn-secondary" target="_blank">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                <span>2GIS картадан көру</span>
+            </a>
+            <a href="#" class="btn btn-secondary" id="addToCalendar">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <span>Күнтізбеге қосу</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="wishes-section">
+        <div class="wishes-card">
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
+
+            <div class="wishes-header">
+                <div class="wishes-icon">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
+                <h2 class="wishes-title">Жас отбасыға<br><em>жылы лебіздеріңіз</em></h2>
+                <p class="wishes-subtitle">
+                    Өз тілегіңізді қалдырыңыз —<br>
+                    жас жұбайлар оны жүректерінде сақтайды
+                </p>
+            </div>
+
+            <div class="wishes-form">
+                <input type="text" class="form-input" id="wishName" placeholder="Атыңыз" maxlength="50">
+                <textarea class="form-textarea" id="wishText" placeholder="Жас жұбайларға тілегіңізді жазыңыз..." maxlength="500"></textarea>
+                <button class="btn btn-send" id="sendWish">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <line x1="22" y1="2" x2="11" y2="13"/>
+                        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                    </svg>
+                    <span>Тілегімді жіберу</span>
+                </button>
+            </div>
+
+            <div class="wishes-list" id="wishesList">
+                <div class="no-wishes">Алғашқы тілекті сіз қалдырыңыз ✨</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="signature">
+        <div class="signature-text">Сіздердің келулеріңізді<br>асыға күтеміз</div>
+    </div>
+</div>
+
+<div class="toast" id="toast">Тілегіңіз қабылданды ✨</div>
+
+<div class="heart-overlay" id="heartOverlay">
+    <div class="light-rays" id="lightRays"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="center-burst"></div>
+    <div class="heart-container">
+        <div class="heart-shape">
+            <svg viewBox="0 0 200 180" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="heartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#f4e9d3"/>
+                        <stop offset="40%" stop-color="#e8c878"/>
+                        <stop offset="70%" stop-color="#d4af37"/>
+                        <stop offset="100%" stop-color="#a8862a"/>
+                    </linearGradient>
+                    <radialGradient id="heartGlow" cx="35%" cy="30%">
+                        <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+                        <stop offset="50%" stop-color="#f4e9d3" stop-opacity="0.3"/>
+                        <stop offset="100%" stop-color="#d4af37" stop-opacity="0"/>
+                    </radialGradient>
+                </defs>
+                <path d="M100,170 C100,170 20,120 20,65 C20,40 40,20 65,20 C80,20 92,28 100,40 C108,28 120,20 135,20 C160,20 180,40 180,65 C180,120 100,170 100,170 Z"
+                      fill="url(#heartGrad)"
+                      stroke="#f4e9d3"
+                      stroke-width="1.5"/>
+                <path d="M100,170 C100,170 20,120 20,65 C20,40 40,20 65,20 C80,20 92,28 100,40 C108,28 120,20 135,20 C160,20 180,40 180,65 C180,120 100,170 100,170 Z"
+                      fill="url(#heartGlow)"/>
+            </svg>
+        </div>
+        <div class="heart-text">
+            <div class="heart-text-line1">жүрегіңізден шыққан сөзіңізге</div>
+            <div class="heart-text-line2">Рақмет!</div>
+        </div>
+    </div>
+</div>
+
+<script>
+const starsContainer = document.getElementById('stars');
+for (let i = 0; i < 50; i++) {
+    const star = document.createElement('div');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 4 + 's';
+    star.style.animationDuration = (3 + Math.random() * 3) + 's';
+    starsContainer.appendChild(star);
+}
+for (let i = 0; i < 12; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
+    particle.style.left = Math.random() * 100 + '%';
+    particle.style.animationDuration = (15 + Math.random() * 15) + 's';
+    particle.style.animationDelay = Math.random() * 10 + 's';
+    document.body.appendChild(particle);
+}
+
+const targetDate = new Date('2026-05-23T12:00:00').getTime();
+function updateCountdown() {
+    const now = Date.now();
+    const distance = targetDate - now;
+    if (distance < 0) {
+        document.getElementById('countdown').innerHTML = '<div style="grid-column:1/-1;text-align:center;font-family:Cormorant Garamond,serif;font-style:italic;font-size:22px;color:var(--gold-deep);padding:20px;">Той басталды! 🎉</div>';
+        return;
+    }
+    const days = Math.floor(distance / 86400000);
+    const hours = Math.floor((distance % 86400000) / 3600000);
+    const minutes = Math.floor((distance % 3600000) / 60000);
+    const seconds = Math.floor((distance % 60000) / 1000);
+    document.getElementById('days').textContent = String(days).padStart(2, '0');
+    document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+document.getElementById('addToCalendar').addEventListener('click', function(e) {
+    e.preventDefault();
+    const start = '20260523T070000Z';
+    const end = '20260523T120000Z';
+    const title = encodeURIComponent('Сұлтан & Аяулым құдалығы');
+    const details = encodeURIComponent('Той иелері: Манас пен Ұлбосын. Байланыс: +7 706 706 33 33');
+    const location = encodeURIComponent('Түркістан облысы, Сарыағаш қаласы, Байбосын ата 47 (Қара шаңырақ)');
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${start}/${end}&details=${details}&location=${location}`;
+    window.open(url, '_blank');
+});
+
+const wishesList = document.getElementById('wishesList');
+const toast = document.getElementById('toast');
+
+function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+}
+function formatDate(timestamp) {
+    const d = new Date(timestamp);
+    const months = ['қаң', 'ақп', 'наур', 'сәу', 'мам', 'мау', 'шіл', 'там', 'қыр', 'қаз', 'қар', 'жел'];
+    return `${d.getDate()} ${months[d.getMonth()]} · ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+}
+function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+function showHeartAnimation() {
+    const overlay = document.getElementById('heartOverlay');
+    const lightRays = document.getElementById('lightRays');
+
+    lightRays.innerHTML = '';
+    for (let i = 0; i < 12; i++) {
+        const ray = document.createElement('div');
+        ray.className = 'light-ray';
+        ray.style.transform = `translate(-50%, 0) rotate(${i * 30}deg)`;
+        ray.style.animationDelay = (i * 0.1) + 's';
+        ray.style.animationDuration = (6 + Math.random() * 4) + 's';
+        lightRays.appendChild(ray);
+    }
+    overlay.classList.add('show');
+
+    if (navigator.vibrate) navigator.vibrate([50, 30, 100]);
+
+    setTimeout(() => {
+        for (let i = 0; i < 30; i++) {
+            const spark = document.createElement('div');
+            spark.className = 'spark';
+            const angle = (Math.PI * 2 * i) / 30 + Math.random() * 0.3;
+            const distance = 150 + Math.random() * 200;
+            spark.style.left = '50%';
+            spark.style.top = '50%';
+            spark.style.setProperty('--end-x', Math.cos(angle) * distance + 'px');
+            spark.style.setProperty('--end-y', Math.sin(angle) * distance + 'px');
+            spark.style.animationDelay = (Math.random() * 0.4) + 's';
+            spark.style.animationDuration = (1.5 + Math.random()) + 's';
+            overlay.appendChild(spark);
+            setTimeout(() => spark.remove(), 2500);
+        }
+    }, 200);
+
+    const heartColors = ['#b8923a', '#d4af37', '#e8d4a8', '#c89b8a', '#e8c8b8'];
+    for (let wave = 0; wave < 3; wave++) {
+        setTimeout(() => {
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'flying-heart';
+                    const size = 16 + Math.random() * 18;
+                    const color = heartColors[Math.floor(Math.random() * heartColors.length)];
+                    heart.innerHTML = `<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="${color}" style="filter: drop-shadow(0 0 8px ${color});"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>`;
+                    const startX = (Math.random() - 0.5) * 280;
+                    heart.style.left = `calc(50% + ${startX}px)`;
+                    heart.style.top = '65%';
+                    heart.style.setProperty('--tx', ((Math.random() - 0.5) * 250) + 'px');
+                    heart.style.setProperty('--rot', ((Math.random() - 0.5) * 90) + 'deg');
+                    heart.style.setProperty('--mid-rot', ((Math.random() - 0.5) * 30) + 'deg');
+                    heart.style.animationDuration = (2.5 + Math.random()) + 's';
+                    overlay.appendChild(heart);
+                    setTimeout(() => heart.remove(), 3500);
+                }, i * 80);
+            }
+        }, 300 + wave * 600);
+    }
+
+    setTimeout(() => {
+        for (let i = 0; i < 25; i++) {
+            setTimeout(() => {
+                const petal = document.createElement('div');
+                petal.className = 'petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDuration = (3 + Math.random() * 3) + 's';
+                petal.style.setProperty('--drift', ((Math.random() - 0.5) * 200) + 'px');
+                petal.style.opacity = (0.5 + Math.random() * 0.4).toString();
+                overlay.appendChild(petal);
+                setTimeout(() => petal.remove(), 6000);
+            }, i * 100);
+        }
+    }, 600);
+
+    setTimeout(() => {
+        overlay.classList.remove('show');
+        setTimeout(() => {
+            overlay.querySelectorAll('.spark, .flying-heart, .petal').forEach(el => el.remove());
+        }, 600);
+    }, 4500);
+}
+
+async function loadWishes() {
+    try {
+        const result = await window.storage.list('wish:', true);
+        if (!result || !result.keys || result.keys.length === 0) {
+            wishesList.innerHTML = '<div class="no-wishes">Алғашқы тілекті сіз қалдырыңыз ✨</div>';
+            return;
+        }
+        const wishes = [];
+        for (const key of result.keys) {
+            try {
+                const wishData = await window.storage.get(key, true);
+                if (wishData && wishData.value) wishes.push(JSON.parse(wishData.value));
+            } catch (e) {}
+        }
+        wishes.sort((a, b) => b.timestamp - a.timestamp);
+        if (wishes.length === 0) {
+            wishesList.innerHTML = '<div class="no-wishes">Алғашқы тілекті сіз қалдырыңыз ✨</div>';
+            return;
+        }
+        wishesList.innerHTML = wishes.map(w => `
+            <div class="wish-item">
+                <div class="wish-author">${escapeHtml(w.name)}</div>
+                <div class="wish-text">"${escapeHtml(w.text)}"</div>
+                <div class="wish-date">${formatDate(w.timestamp)}</div>
+            </div>
+        `).join('');
+    } catch (error) {
+        wishesList.innerHTML = '<div class="no-wishes">Алғашқы тілекті сіз қалдырыңыз ✨</div>';
+    }
+}
+
+document.getElementById('sendWish').addEventListener('click', async function() {
+    const nameInput = document.getElementById('wishName');
+    const textInput = document.getElementById('wishText');
+    const sendBtn = this;
+    const name = nameInput.value.trim();
+    const text = textInput.value.trim();
+    if (!name) { showToast('Атыңызды жазыңыз'); nameInput.focus(); return; }
+    if (!text) { showToast('Тілегіңізді жазыңыз'); textInput.focus(); return; }
+
+    // Батырманы блоктау
+    sendBtn.disabled = true;
+    sendBtn.style.opacity = '0.6';
+
+    const wish = { name, text, timestamp: Date.now() };
+
+    // 1) Formspree-ге жіберу (Gmail-ге келеді)
+    try {
+        await fetch('https://formspree.io/f/xvzlgypd', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                wish: text,
+                date: new Date().toLocaleString('kk-KZ'),
+                _subject: `Жаңа тілек: ${name}`
+            })
+        });
+    } catch (e) {
+        console.log('Formspree қатесі:', e);
+    }
+
+    // 2) Жергілікті сақтау (парақта көрсету үшін)
+    try {
+        const key = `wish:${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
+        await window.storage.set(key, JSON.stringify(wish), true);
+        await loadWishes();
+    } catch (error) {
+        console.log('Storage қатесі:', error);
+    }
+
+    nameInput.value = '';
+    textInput.value = '';
+    showHeartAnimation();
+
+    // Батырманы қалпына келтіру
+    setTimeout(() => {
+        sendBtn.disabled = false;
+        sendBtn.style.opacity = '1';
+    }, 1000);
+});
+loadWishes();
+
+// МУЗЫКА БАСҚАРУ - сенімді нұсқа
+const musicToggle = document.getElementById('musicToggle');
+const bgMusic = document.getElementById('bgMusic');
+const musicHint = document.getElementById('musicHint');
+let isPlaying = false;
+
+bgMusic.volume = 0.5;
+
+// Toggle функциясы
+musicToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    if (bgMusic.paused) {
+        const playPromise = bgMusic.play();
+        if (playPromise !== undefined) {
+            playPromise.then(() => {
+                musicToggle.classList.add('playing');
+                isPlaying = true;
+                musicHint.classList.remove('show');
+            }).catch(err => {
+                console.log('Музыка ойналмады:', err);
+            });
+        }
+    } else {
+        bgMusic.pause();
+        musicToggle.classList.remove('playing');
+        isPlaying = false;
+    }
+});
+
+// Музыка күйін бақылау
+bgMusic.addEventListener('play', () => {
+    musicToggle.classList.add('playing');
+    isPlaying = true;
+});
+bgMusic.addEventListener('pause', () => {
+    musicToggle.classList.remove('playing');
+    isPlaying = false;
+});
+
+// Бастапқы кеңесші
+setTimeout(() => {
+    if (bgMusic.paused) {
+        musicHint.classList.add('show');
+        setTimeout(() => musicHint.classList.remove('show'), 5000);
+    }
+}, 2000);
+
+// Бірінші өзара әрекеттесу кезінде автоматты қосу әрекеті
+let autoStarted = false;
+function autoStartMusic() {
+    if (!autoStarted && bgMusic.paused) {
+        autoStarted = true;
+        bgMusic.play().then(() => {
+            musicHint.classList.remove('show');
+        }).catch(() => {});
+    }
+}
+document.addEventListener('click', autoStartMusic, { once: false });
+document.addEventListener('touchstart', autoStartMusic, { once: false });
+</script>
+</body>
+</html>
